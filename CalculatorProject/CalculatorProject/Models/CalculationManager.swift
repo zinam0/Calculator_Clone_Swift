@@ -63,7 +63,7 @@ class CalculationManager: CalculationInputDelegate {
     func percentageButtonTapped() {
         guard let num = Double(currentNumber ?? "0") else { return }
         isPreviousEqualsTapped = false
-        currentNumber = "\(num * 0.01)"
+        currentNumber = "\(num / 0.01)"
         displayDelegate?.updateDigit(value: currentNumber ?? "0", true)
     }
     
