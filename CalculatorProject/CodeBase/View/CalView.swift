@@ -61,7 +61,7 @@ class CalView: UIView {
     //요구사항을 구현하려면 reuiqred키워드가 붙음
     //NSCoding protocol을 채탱하고 있는데 실패가능 이니셜라이저를 작성하도록 되어있음
     required init?(coder: NSCoder) {
-        super.init(coder: <#T##NSCoder#>)
+        super.init(coder: coder)
         //fatalError("init(coder:) has not been implemented")
         makeUI()
     }
