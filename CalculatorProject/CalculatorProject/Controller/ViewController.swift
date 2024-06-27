@@ -10,7 +10,8 @@ import UIKit
 final class ViewController: UIViewController, CalModelDelegate, CalViewDelegate {
     
     private let model = CalculatorModel()
-    private let calculatorView = CalView()
+    //명확하게 호출하면 버그 확률을 적어짐
+    private let calculatorView = CalView(frame: .zero) //0,0,0,0으로 초기화
     
     override func viewDidLoad() {
         super.viewDidLoad()
