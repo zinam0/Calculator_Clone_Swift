@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7569792A2C2927E200705A5E /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756979292C2927E200705A5E /* CalculationManager.swift */; };
 		7569792C2C29287D00705A5E /* CalculationResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569792B2C29287D00705A5E /* CalculationResultManager.swift */; };
+		75A5CCD92C2D2645006F7CA3 /* CalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5CCD82C2D2645006F7CA3 /* CalView.swift */; };
+		75A5CCDB2C2D28A2006F7CA3 /* CalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5CCDA2C2D28A2006F7CA3 /* CalModel.swift */; };
 		75B400CD2C27D4F00083A63D /* CalculationInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B400CC2C27D4F00083A63D /* CalculationInputDelegate.swift */; };
 		75CEDEAE2C26B30600E08236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CEDEAD2C26B30600E08236 /* AppDelegate.swift */; };
 		75CEDEB02C26B30600E08236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CEDEAF2C26B30600E08236 /* SceneDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		756979292C2927E200705A5E /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 		7569792B2C29287D00705A5E /* CalculationResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationResultManager.swift; sourceTree = "<group>"; };
+		75A5CCD82C2D2645006F7CA3 /* CalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalView.swift; sourceTree = "<group>"; };
+		75A5CCDA2C2D28A2006F7CA3 /* CalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalModel.swift; sourceTree = "<group>"; };
 		75B400CC2C27D4F00083A63D /* CalculationInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationInputDelegate.swift; sourceTree = "<group>"; };
 		75CEDEAA2C26B30600E08236 /* CalculatorProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75CEDEAD2C26B30600E08236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,9 +51,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75A5CC9F2C2C7874006F7CA3 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				75CEDEC22C27047C00E08236 /* OperationProtocol.swift */,
+				75B400CC2C27D4F00083A63D /* CalculationInputDelegate.swift */,
+				756979292C2927E200705A5E /* CalculationManager.swift */,
+				7569792B2C29287D00705A5E /* CalculationResultManager.swift */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		75A5CCD52C2D2612006F7CA3 /* CodeBase */ = {
+			isa = PBXGroup;
+			children = (
+				75A5CCD72C2D262A006F7CA3 /* View */,
+				75A5CCD62C2D261C006F7CA3 /* Model */,
+			);
+			path = CodeBase;
+			sourceTree = "<group>";
+		};
+		75A5CCD62C2D261C006F7CA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75A5CCDA2C2D28A2006F7CA3 /* CalModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75A5CCD72C2D262A006F7CA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75A5CCD82C2D2645006F7CA3 /* CalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		75CEDEA12C26B30600E08236 = {
 			isa = PBXGroup;
 			children = (
+				75A5CCD52C2D2612006F7CA3 /* CodeBase */,
 				75CEDEAC2C26B30600E08236 /* CalculatorProject */,
 				75CEDEAB2C26B30600E08236 /* Products */,
 			);
@@ -82,10 +123,7 @@
 		75CEDEC12C27046300E08236 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				75CEDEC22C27047C00E08236 /* OperationProtocol.swift */,
-				75B400CC2C27D4F00083A63D /* CalculationInputDelegate.swift */,
-				756979292C2927E200705A5E /* CalculationManager.swift */,
-				7569792B2C29287D00705A5E /* CalculationResultManager.swift */,
+				75A5CC9F2C2C7874006F7CA3 /* StoryBoard */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,7 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A5CCDB2C2D28A2006F7CA3 /* CalModel.swift in Sources */,
 				75CEDEC32C27047C00E08236 /* OperationProtocol.swift in Sources */,
+				75A5CCD92C2D2645006F7CA3 /* CalView.swift in Sources */,
 				75CEDED22C272C1900E08236 /* CircleUIButton.swift in Sources */,
 				75CEDECD2C2725F700E08236 /* ViewController.swift in Sources */,
 				7569792C2C29287D00705A5E /* CalculationResultManager.swift in Sources */,

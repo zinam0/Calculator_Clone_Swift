@@ -7,50 +7,35 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController, CalModelDelegate, CalViewDelegate {
     
-    var inputManager = CalculationManager()
-    var displayManager = CalculationResultManager()
+    private let model = CalculatorModel()
+    private let calculatorView = CalView()
     
-    @IBOutlet weak var digitLabel: UILabel!
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        inputManager.displayDelegate = displayManager
-        displayManager.digitLabel = digitLabel
-        
-        inputManager.clearButtonTapped()
+        model.delegate = self
+        calculatorView.delegate = self
+        setupCalculatorView()
     }
     
-    @IBAction func digitButtonTapped(_ sender: UIButton) {
-        inputManager.digitButtonTapped(sender.currentTitle)
+    private func setupCalculatorView() {
+        view.addSubview(calculatorView)
+        calculatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            calculatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            calculatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            calculatorView.topAnchor.constraint(equalTo: view.topAnchor),
+            calculatorView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
-    
-    @IBAction func operationButtonTapped(_ sender: UIButton) {
-        inputManager.operationButtonTapped(sender.currentTitle)
+    func updateValueDisplay(_ value: String) {
+        calculatorView.updateDisplay(value)
     }
     
-    @IBAction func equalsButtonTapped(_ sender: UIButton) {
-        inputManager.equalsButtonTapped()
+    func buttonTapped(label: String) {
+        model.updateDisplay(with: label)
     }
-    
-    @IBAction func clearButtonTapped(_ sender: UIButton) {
-        inputManager.clearButtonTapped()
-    }
-    
-    
-    @IBAction func negateButtonTapped(_ sender: UIButton) {
-        inputManager.negateButtonTapped()
-    }
-    
-    @IBAction func percentageButtonTapped(_ sender: UIButton) {
-        inputManager.percentageButtonTapped()
-    }
-    
 }
-
-
-
 
